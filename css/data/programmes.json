@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "name": "Full-Stack Web Engineering",
+        "category": "Software Development",
+        "duration": "12 Weeks",
+        "price": 185000,
+        "startDate": "2026-11-09",
+        "instructor": "Daniel Okafor",
+        "availableSlots": 18,
+        "status": "open",
+        "description": "Build modern web applications from frontend interfaces to backend APIs and databases."
+    },
+    {
+        "id": 2,
+        "name": "Cybersecurity & SOC Operations",
+        "category": "Cybersecurity",
+        "duration": "10 Weeks",
+        "price": 220000,
+        "startDate": "2026-11-16",
+        "instructor": "Amaka Nwosu",
+        "availableSlots": 12,
+        "status": "open",
+        "description": "Learn security monitoring, threat detection, incident response and SOC operations."
+    },
+    {
+        "id": 3,
+        "name": "Data Analytics with Python",
+        "category": "Data & AI",
+        "duration": "8 Weeks",
+        "price": 150000,
+        "startDate": "2026-12-01",
+        "instructor": "Michael Adeyemi",
+        "availableSlots": 24,
+        "status": "upcoming",
+        "description": "Learn Python-based data analysis, visualization and practical data-driven decision making."
+    },
+    {
+        "id": 4,
+        "name": "Cloud Engineering",
+        "category": "Cloud & DevOps",
+        "duration": "10 Weeks",
+        "price": 210000,
+        "startDate": "2026-11-23",
+        "instructor": "David Eze",
+        "availableSlots": 8,
+        "status": "open",
+        "description": "Develop practical skills in cloud infrastructure, deployment, containers and automation."
+    },
+    {
+        "id": 5,
+        "name": "UI/UX Product Design",
+        "category": "Design",
+        "duration": "6 Weeks",
+        "price": 120000,
+        "startDate": "2026-12-07",
+        "instructor": "Sarah Williams",
+        "availableSlots": 20,
+        "status": "upcoming",
+        "description": "Design accessible digital products using research, wireframes, prototypes and usability testing."
+    },
+    {
+        "id": 6,
+        "name": "Advanced JavaScript",
+        "category": "Software Development",
+        "duration": "6 Weeks",
+        "price": 110000,
+        "startDate": "2026-10-19",
+        "instructor": "Chris Mensah",
+        "availableSlots": 0,
+        "status": "closed",
+        "description": "Explore advanced JavaScript concepts including asynchronous programming, APIs and application architecture."
+    }
+]

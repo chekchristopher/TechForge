@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TechForge Academy technology training programmes">
+    <title>TechForge Academy | Technology Training</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+        <a href="#" class="logo" aria-label="TechForge Academy home">
+            <span class="logo-mark">T</span>
+            <span>TechForge</span>
+        </a>
+
+        <button
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            aria-expanded="false"
+            aria-controls="mainNavigation"
+            aria-label="Open navigation menu"
+        >
+            ☰
+        </button>
+
+        <div class="navigation" id="mainNavigation">
+            <a href="#programmes">Programmes</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#programmes" class="nav-button">Explore programmes</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container hero-content">
+
+            <div class="hero-text">
+                <span class="eyebrow">TECHNOLOGY TRAINING PLATFORM</span>
+
+                <h1>
+                    Build the skills that
+                    <span>shape tomorrow.</span>
+                </h1>
+
+                <p>
+                    Practical, instructor-led technology programmes designed
+                    to help you build real-world skills and accelerate your
+                    professional journey.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#programmes" class="primary-button">
+                        Explore programmes
+                    </a>
+
+                    <a href="#about" class="secondary-button">
+                        Learn more
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div>
+                        <strong>24+</strong>
+                        <span>Programmes</span>
+                    </div>
+
+                    <div>
+                        <strong>2,500+</strong>
+                        <span>Learners</span>
+                    </div>
+
+                    <div>
+                        <strong>18</strong>
+                        <span>Expert instructors</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-card" aria-label="Featured programme">
+                <div class="hero-card-top">
+                    <span class="status-badge">Featured</span>
+                    <span>2026</span>
+                </div>
+
+                <div class="hero-icon">⌘</div>
+
+                <span class="card-category">Software Development</span>
+
+                <h2>Full-Stack Engineering</h2>
+
+                <p>
+                    Master modern frontend and backend development
+                    through hands-on projects.
+                </p>
+
+                <div class="featured-details">
+                    <span>12 Weeks</span>
+                    <span>●</span>
+                    <span>24 Slots</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Programmes -->
+    <section class="programmes-section" id="programmes">
+        <div class="container">
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">LEARNING PROGRAMMES</span>
+                    <h2>Find your next programme</h2>
+                    <p>
+                        Choose from practical programmes built around
+                        industry-relevant technology skills.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Search and filters -->
+            <div class="programme-controls">
+
+                <div class="search-wrapper">
+                    <label for="searchInput" class="sr-only">
+                        Search programmes
+                    </label>
+
+                    <span class="search-icon">⌕</span>
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search programmes..."
+                        autocomplete="off"
+                    >
+                </div>
+
+                <div class="filter-group">
+
+                    <label for="categoryFilter" class="sr-only">
+                        Filter by category
+                    </label>
+
+                    <select id="categoryFilter">
+                        <option value="all">All categories</option>
+                    </select>
+
+                    <label for="statusFilter" class="sr-only">
+                        Filter by status
+                    </label>
+
+                    <select id="statusFilter">
+                        <option value="all">All statuses</option>
+                        <option value="open">Open</option>
+                        <option value="upcoming">Upcoming</option>
+                        <option value="closed">Closed</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div
+                class="results-summary"
+                id="resultsSummary"
+                aria-live="polite"
+            ></div>
+
+            <!-- Loading state -->
+            <div class="state-container" id="loadingState">
+                <div class="spinner"></div>
+                <p>Loading programmes...</p>
+            </div>
+
+            <!-- Error state -->
+            <div class="state-container error-state hidden" id="errorState">
+                <div class="state-icon">!</div>
+                <h3>Unable to load programmes</h3>
+                <p>Something went wrong while loading the programmes.</p>
+                <button class="primary-button" id="retryButton">
+                    Try again
+                </button>
+            </div>
+
+            <!-- Empty state -->
+            <div class="state-container hidden" id="emptyState">
+                <div class="state-icon">⌕</div>
+                <h3>No programmes found</h3>
+                <p>
+                    Try changing your search or filter criteria.
+                </p>
+
+                <button
+                    class="secondary-button"
+                    id="clearFiltersButton"
+                >
+                    Clear filters
+                </button>
+            </div>
+
+            <!-- Programme cards -->
+            <div
+                class="programme-grid"
+                id="programmeGrid"
+                aria-live="polite"
+            ></div>
+
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about-section" id="about">
+        <div class="container about-grid">
+
+            <div>
+                <span class="eyebrow">WHY TECHFORGE</span>
+
+                <h2>Learn by building, not just watching.</h2>
+
+                <p>
+                    Our programmes combine structured instruction,
+                    practical projects and industry-focused learning
+                    to help students develop useful technology skills.
+                </p>
+            </div>
+
+            <div class="features">
+
+                <article class="feature">
+                    <div class="feature-icon">01</div>
+                    <div>
+                        <h3>Practical learning</h3>
+                        <p>
+                            Work on realistic projects and assignments
+                            throughout your programme.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="feature">
+                    <div class="feature-icon">02</div>
+                    <div>
+                        <h3>Expert instructors</h3>
+                        <p>
+                            Learn from experienced professionals
+                            working across the technology industry.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="feature">
+                    <div class="feature-icon">03</div>
+                    <div>
+                        <h3>Career focused</h3>
+                        <p>
+                            Develop skills and projects that can support
+                            your professional portfolio.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer" id="contact">
+    <div class="container footer-content">
+        <div>
+            <a href="#" class="logo">
+                <span class="logo-mark">T</span>
+                <span>TechForge</span>
+            </a>
+
+            <p>
+                Practical technology education for the next generation
+                of builders.
+            </p>
+        </div>
+
+        <div>
+            <h3>Platform</h3>
+            <a href="#programmes">Programmes</a>
+            <a href="#about">About us</a>
+        </div>
+
+        <div>
+            <h3>Contact</h3>
+            <a href="mailto:hello@techforge.example">
+                hello@techforge.example
+            </a>
+            <span>Mon – Fri, 9am – 5pm</span>
+        </div>
+    </div>
+
+    <div class="container footer-bottom">
+        <span>© 2026 TechForge Academy</span>
+        <span>Built for technology learners.</span>
+    </div>
+</footer>
+
+<!-- Programme details modal -->
+<div
+    class="modal hidden"
+    id="programmeModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+>
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <div class="modal-content">
+
+        <button
+            class="modal-close"
+            id="modalClose"
+            aria-label="Close programme details"
+        >
+            ×
+        </button>
+
+        <div id="modalBody"></div>
+
+    </div>
+</div>
+
+<!-- Registration modal -->
+<div
+    class="modal hidden"
+    id="registrationModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="registrationTitle"
+>
+    <div class="modal-overlay" id="registrationOverlay"></div>
+
+    <div class="modal-content">
+
+        <button
+            class="modal-close"
+            id="registrationClose"
+            aria-label="Close registration form"
+        >
+            ×
+        </button>
+
+        <div class="modal-header">
+            <span class="eyebrow">REGISTRATION</span>
+            <h2 id="registrationTitle">Register for a programme</h2>
+            <p id="registrationProgramme"></p>
+        </div>
+
+        <form id="registrationForm" novalidate>
+
+            <div class="form-grid">
+
+                <div class="form-field">
+                    <label for="fullName">
+                        Full name <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        autocomplete="name"
+                        required
+                    >
+
+                    <small class="field-error" id="fullNameError"></small>
+                </div>
+
+                <div class="form-field">
+                    <label for="email">
+                        Email address <span>*</span>
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <small class="field-error" id="emailError"></small>
+                </div>
+
+                <div class="form-field">
+                    <label for="phone">
+                        Phone number <span>*</span>
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        autocomplete="tel"
+                        required
+                    >
+
+                    <small class="field-error" id="phoneError"></small>
+                </div>
+
+                <div class="form-field">
+                    <label for="experience">
+                        Experience level <span>*</span>
+                    </label>
+
+                    <select id="experience" name="experience" required>
+                        <option value="">Select level</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+
+                    <small class="field-error" id="experienceError"></small>
+                </div>
+
+            </div>
+
+            <div class="form-field">
+                <label for="message">
+                    Tell us about your goals
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    placeholder="What do you hope to achieve?"
+                ></textarea>
+            </div>
+
+            <label class="checkbox-field">
+                <input type="checkbox" id="terms" required>
+                <span>
+                    I agree to the programme registration terms.
+                </span>
+            </label>
+
+            <small class="field-error" id="termsError"></small>
+
+            <button type="submit" class="primary-button full-width">
+                Complete registration
+            </button>
+
+            <div
+                class="success-message hidden"
+                id="successMessage"
+                role="status"
+            >
+                Registration submitted successfully.
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
